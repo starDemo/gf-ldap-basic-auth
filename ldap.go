@@ -43,7 +43,7 @@ func (l *LdapAuth) authLdapUser(user, pass string) (bool, error) {
 	}
 	defer conn.Close()
 	if err := conn.Bind(result.Entries[0].DN, pass); err != nil {
-		return false, fmt.Errorf("failed to auth. %s", err)
+		return false, nil
 	}
 	return true, nil
 }
