@@ -14,10 +14,10 @@ import (
 
 func TestBasicAuth(t *testing.T) {
 	ldapAuth, err := NewLdapAuth(LdapConfig{
-		ldapUrl:      "",
-		ldapUser:     "",
-		ldapPassword: "",
-		searchDn:     "",
+		LdapUrl:      "",
+		LdapUser:     "",
+		LdapPassword: "",
+		SearchDn:     "",
 	})
 	if err != nil {
 		fmt.Println("ldap auth init failed")

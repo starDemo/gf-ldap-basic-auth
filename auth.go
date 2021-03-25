@@ -15,10 +15,10 @@ import (
 )
 
 type LdapConfig struct {
-	ldapUrl      string
-	ldapUser     string
-	ldapPassword string
-	searchDn     string
+	LdapUrl      string
+	LdapUser     string
+	LdapPassword string
+	SearchDn     string
 }
 
 type LdapAuth struct {
@@ -27,7 +27,7 @@ type LdapAuth struct {
 }
 
 func NewLdapAuth(config LdapConfig) (*LdapAuth, error) {
-	conn, err := getConn(config.ldapUrl, config.ldapUser, config.ldapPassword)
+	conn, err := getConn(config.LdapUrl, config.LdapUser, config.LdapPassword)
 	if err != nil {
 		return nil, err
 	}

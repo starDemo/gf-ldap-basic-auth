@@ -12,7 +12,7 @@ import (
 
 func (l *LdapAuth) authLdapUser(user, pass string) (bool, error) {
 	result, err := l.baseSearch(ldap.NewSearchRequest(
-		l.config.searchDn,
+		l.config.SearchDn,
 		ldap.ScopeWholeSubtree,
 		ldap.NeverDerefAliases,
 		0,
@@ -37,7 +37,7 @@ func (l *LdapAuth) authLdapUser(user, pass string) (bool, error) {
 		return false, fmt.Errorf("too many entries returned")
 	}
 
-	conn, err := newConn(l.config.ldapUrl)
+	conn, err := newConn(l.config.LdapUrl)
 	if err != nil {
 		return false, err
 	}
@@ -74,7 +74,7 @@ func getConn(url, bindUser, bindPass string) (*ldap.Conn, error) {
 func (l *LdapAuth) checkAlive() error {
 	// 重连检测
 	if l.connection.IsClosing() {
-		if conn, err := getConn(l.config.ldapUrl, l.config.ldapUser, l.config.ldapPassword); err != nil {
+		if conn, err := getConn(l.config.LdapUrl, l.config.LdapUser, l.config.LdapPassword); err != nil {
 			return fmt.Errorf("reconnect Ldap Conn Error:%s", err.Error())
 		} else {
 			l.connection = conn
