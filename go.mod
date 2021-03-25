@@ -1,4 +1,4 @@
-module gf-ldap-basic-auth
+module github.com/starDemo/gf-ldap-basic-auth
 
 go 1.15
 
