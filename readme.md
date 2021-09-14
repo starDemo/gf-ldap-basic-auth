@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/starDemo/gf-ldap-basic-auth"
+	"github.com/stardemo/gf-ldap-basic-auth"
 )
 
 func main() {
