@@ -1,4 +1,4 @@
-// package gf_ldap_basic_auth
+// Package ldapauth
 // @Function :
 // @File : auth.go
 // @Author : starliu
@@ -8,7 +8,7 @@ package ldapauth
 import (
 	"encoding/base64"
 	"github.com/go-ldap/ldap/v3"
-	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/v2/net/ghttp"
 	"net/http"
 	"strconv"
 	"strings"
